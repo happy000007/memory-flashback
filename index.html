@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <style>
+        /* Add any additional styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        section {
+            margin-top: 20px;
+        }
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 align="center" style="font-size: 36px;"><b>Badani Tal Tour</b></h1>
+    </header>
+
+    <img src="file:///C:/Users/Negi/Pictures/DSC_0555-1.webp" alt="Badani Tal Image" style="display: block; margin: 0 auto; max-width: 100%;">
+
+    <section>
+        <p><b>Karan</b></p>
+        <p><b>Mohit</b></p>
+        <p><b>Bipin</b></p>
+        <p><b>Ankit</b></p>
+        <p><b>Yogesh</b></p>
+    </section>
+
+    <section>
+        <form onsubmit="showMessage(); return false;" style="text-align: center;">
+            <p style="color: red;">Which one do you think is the ugliest?</p>
+            <select name="ugliest" style="color: red;" id="ugliestSelect">
+                <option value="karan">Karan</option>
+                <option value="mohit">Mohit</option>
+                <option value="bipin">Bipin</option>
+                <option value="ankit">Ankit</option>
+                <option value="yogesh">Yogesh</option>
+                <option value="all">All are handsome</option>
+            </select>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <section>
+        <marquee behavior="scroll" direction="left" id="marqueeResult" style="font-size: 24px;"></marquee>
+    </section>
+
+    <script>
+        function showMessage() {
+            var selectedOption = document.getElementById("ugliestSelect").value;
+            var marqueeResult = document.getElementById("marqueeResult");
+
+            switch (selectedOption) {
+                case "karan":
+                    marqueeResult.innerHTML = "Bhul gya tu banjagri ki yande, kese class m pehli ghanti m pani pilata tha.";
+                    break;
+                case "mohit":
+                    marqueeResult.innerHTML = "Waah bhai, bhul gaya jamlok ke aawle, terko chup ke alg se jyada deta tha.";
+                    break;
+                case "bipin":
+                    marqueeResult.innerHTML = "Wah moj kar di bhai, School ka Name Haridwar rally mai roshan karaya, or tu mujhe select kiya feeling sad.";
+                    break;
+                case "ankit":
+                    marqueeResult.innerHTML = "Egi re Egi.";
+                    break;
+                case "yogesh":
+                    marqueeResult.innerHTML = "Khate peete ghar se hai ladle, aao kabhi hamari gali, chota mai.";
+                    break;
+                case "all":
+                    marqueeResult.innerHTML = '<font size="18" color="red"><b>Ghanta !</b></font>';
+                    break;
+                default:
+                    marqueeResult.innerHTML = "Please select an option.";
+            }
+        }
+    </script>
+
+</body>
+</html>
